@@ -67,26 +67,42 @@ switch (userStatus) {
 
 let n = 2;
 let counter = 1;
-let data ="Я ничего не понимаю в дизайне"
+let data = "Я ничего не понимаю в дизайне";
 
-while (counter<=n) {
-    console.log('');   // Иначе консоль просто ставит циферку перед строкой
-    console.log(data);
-    counter++
+while (counter <= n) {
+  console.log(""); // Иначе консоль просто ставит циферку перед строкой
+  console.log(data);
+  counter++;
 }
 
 // Задание 6
 
-let amount = 100;  // Количество автомобилей
+let amount = 100; // Количество автомобилей
 let balance = 15; // Остаток автомобилей на N-й день
 
-for (let n = 1; balance < `${amount=amount/2}`; n++) {
-     
- }
- console.log(`${n+1}`); // Закостылил
+for (let n = 1; balance < `${(amount = amount / 2)}`; n++) {}
+console.log(`${n + 1}`); // Закостылил
 
 // Задание 7
+const year1 = 1800;
+const year2 = 2020;
+const searchYear = 1961;
 
+if (searchYear < year1 || searchYear > year2) { // Тут бы какоето прерывание кода потом придумать
+  console.log("Некорректный год");
+}
 
+let counter = 0;
 
-
+for (let y = `${(year1 + year2) / 2}`; y != searchYear; y++) {
+  if (y > searchYear) { /* Это должно быть 1ой итерацией (скорее всего без цикла), сначала по числовой прямой идем в 1ю сторону используя крайние значения, потом 
+    "перескочив" искомое число нужно будет усреднять Y с предыдущим значением Y пока разница не будет 1 (если будет четн-нечетн и не забыть прикрутитьокругление кст) 
+    и потом последняя проверка и +-1 там уже сделать */
+    y = (y + year1) / 2;
+  } else if (y < searchYear) {
+    y = (year2+y) / 2;
+  }  else {
+    console.log('День космонавтики найден');
+  }
+  counter++
+}
