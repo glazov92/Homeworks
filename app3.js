@@ -104,7 +104,7 @@ if (y > searchYear) {
     y = (year1 + y) / 2;
     // console.log(y);
     y = Math.round(y); // Округляем внутри цикла
-    counterY++
+    counterY++;
   }
 } else {
   while (y < searchYear) {
@@ -112,7 +112,7 @@ if (y > searchYear) {
     y = (year2 + y) / 2;
     // console.log(y);
     y = Math.round(y); // Округляем внутри цикла
-    counterY++
+    counterY++;
   }
 }
 
@@ -125,7 +125,7 @@ while (searchYear - y !== 1 && searchYear - y !== -1) {
       y = (yOld2 + y) / 2;
       // console.log(yOld2);
       y = Math.round(y); // Округляем внутри цикла
-      counterY++
+      counterY++;
     }
   } else if (y < searchYear) {
     while (y < searchYear) {
@@ -133,14 +133,14 @@ while (searchYear - y !== 1 && searchYear - y !== -1) {
       y = (yOld2 + y) / 2;
       // console.log(yOld2);
       y = Math.round(y); // Округляем внутри цикла
-      counterY++
+      counterY++;
     }
   } else {
     console.log(y);
     break;
   } // Вот тут надо бы прерывать но  чет идет вниз
   yOld2 = yOld;
-  counterY++
+  counterY++;
 }
 
 if (y > searchYear) {
@@ -150,4 +150,4 @@ if (y > searchYear) {
 }
 
 console.log(y);
-console.log(counterY+'Итераций');
+console.log(counterY + "Итераций");
