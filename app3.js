@@ -88,21 +88,60 @@ const year1 = 1800;
 const year2 = 2020;
 const searchYear = 1961;
 
-if (searchYear < year1 || searchYear > year2) { // Тут бы какоето прерывание кода потом придумать
+if (searchYear < year1 || searchYear > year2) {
+  // Тут бы какоето прерывание кода потом придумать
   console.log("Некорректный год");
 }
 
-let counter = 0;
+let counterY = 0;
+let y = (year1 + year2) / 2; // Помещаем в середину
+y = Math.round(y); // Округляем
+let yOld = 1; // Выделяем место
 
-for (let y = `${(year1 + year2) / 2}`; y != searchYear; y++) {
-  if (y > searchYear) { /* Это должно быть 1ой итерацией (скорее всего без цикла), сначала по числовой прямой идем в 1ю сторону используя крайние значения, потом 
-    "перескочив" искомое число нужно будет усреднять Y с предыдущим значением Y пока разница не будет 1 (если будет четн-нечетн и не забыть прикрутитьокругление кст) 
-    и потом последняя проверка и +-1 там уже сделать */
-    y = (y + year1) / 2;
-  } else if (y < searchYear) {
-    y = (year2+y) / 2;
-  }  else {
-    console.log('День космонавтики найден');
+if (y > searchYear) {
+  while (y > searchYear) {
+    yOld = y; // Записываем старое Y пока не поменялось в последний раз
+    y = (year1 + y) / 2;
+    // console.log(y);
+    y = Math.round(y); // Округляем внутри цикла
   }
-  counter++
+} else {
+  while (y < searchYear) {
+    yOld = y;
+    y = (year2 + y) / 2;
+    // console.log(y);
+    y = Math.round(y); // Округляем внутри цикла
+  }
 }
+
+let yOld2 = yOld;
+
+while (searchYear - y !== 1 && searchYear - y !== -1) {
+  if (y > searchYear) {
+    while (y > searchYear) {
+      yOld = y; // Записываем старое Y пока не поменялось в последний раз
+      y = (yold2 + y) / 2;
+      // console.log(y);
+      y = Math.round(y); // Округляем внутри цикла
+    }
+  } else if (y < searchYear){
+    while (y < searchYear) {
+      yOld = y;
+      y = (yOld2 + y) / 2;
+      // console.log(y);
+      y = Math.round(y); // Округляем внутри цикла
+    }
+  } else {
+    console.log(y);
+     break
+  } // Вот тут надо бы прерывать но  чет идет вниз
+  yOld2 = yOld;
+}
+
+if (y > searchYear) {
+  y = y - 1;
+} else {
+  y = y + 1;
+}
+
+console.log(y);
