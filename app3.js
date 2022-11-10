@@ -114,26 +114,26 @@ if (y > searchYear) {
   }
 }
 
-let yOld2 = yOld;
+let yOld2 = yOld; // Вводим переменную куда будем записывать значения полученные после каждой итерации цикла
 
 while (searchYear - y !== 1 && searchYear - y !== -1) {
   if (y > searchYear) {
     while (y > searchYear) {
       yOld = y; // Записываем старое Y пока не поменялось в последний раз
-      y = (yold2 + y) / 2;
-      // console.log(y);
+      y = (yOld2 + y) / 2;
+      // console.log(yOld2);
       y = Math.round(y); // Округляем внутри цикла
     }
-  } else if (y < searchYear){
+  } else if (y < searchYear) {
     while (y < searchYear) {
       yOld = y;
       y = (yOld2 + y) / 2;
-      // console.log(y);
+      // console.log(yOld2);
       y = Math.round(y); // Округляем внутри цикла
     }
   } else {
     console.log(y);
-     break
+    break;
   } // Вот тут надо бы прерывать но  чет идет вниз
   yOld2 = yOld;
 }
