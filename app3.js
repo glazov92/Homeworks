@@ -150,4 +150,4 @@ if (y > searchYear) {
 }
 
 console.log(y);
-console.log(counterY);
+console.log(counterY+'Итераций');
