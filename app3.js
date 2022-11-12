@@ -77,11 +77,16 @@ while (counter <= n) {
 
 // Задание 6
 
-let amount = 100; // Количество автомобилей
+let amount = 300; // Количество автомобилей
 let balance = 15; // Остаток автомобилей на N-й день
+let days = 1
 
-for (let n = 1; balance < `${(amount = amount / 2)}`; n++) {}
-console.log(`${n + 1}`); // Закостылил
+while (balance < amount) {
+  amount = amount / 2
+  days=days+1
+}
+
+console.log(days); 
 
 // Задание 7
 const year1 = 1800;
@@ -149,5 +154,19 @@ if (y > searchYear) {
   y = y + 1;
 }
 
-console.log(y);
-console.log(counterY + "Итераций");
+console.log(y+' - год первого полета человека в космос');
+console.log(counterY + " Итераций");
+
+let vYears=year1;
+let amountY=0;
+let counterV=0;
+ while (vYears<=year2) {
+  if (vYears % 4 ===0) {
+    amountY++
+  }
+  vYears=vYears+1
+  counterV++
+}
+
+console.log(amountY+' високосных лет');
+console.log(counterV+' итераций');
