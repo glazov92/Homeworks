@@ -164,7 +164,6 @@ while (Years <= year2) {
   Years++;
   counterV++;
   if (counterV % 4 === 0) {
-    // Тк проге не интересно какой год а какой по счету
     vYears++;
   }
 }
