@@ -79,14 +79,14 @@ while (counter <= n) {
 
 let amount = 300; // Количество автомобилей
 let balance = 15; // Остаток автомобилей на N-й день
-let days = 1
+let days = 1;
 
 while (balance < amount) {
-  amount = amount / 2
-  days=days+1
+  amount = amount / 2;
+  days = days + 1;
 }
 
-console.log(days); 
+console.log(days);
 
 // Задание 7
 const year1 = 1800;
@@ -154,19 +154,20 @@ if (y > searchYear) {
   y = y + 1;
 }
 
-console.log(y+' - год первого полета человека в космос');
+console.log(y + " - год первого полета человека в космос");
 console.log(counterY + " Итераций");
 
-let vYears=year1;
-let amountY=0;
-let counterV=0;
- while (vYears<=year2) {
-  if (vYears % 4 ===0) {
-    amountY++
+let Years = year1;
+let counterV = 0;
+let vYears = 1; // Если начинаем с високосного
+while (Years <= year2) {
+  Years++;
+  counterV++;
+  if (counterV % 4 === 0) {
+    // Тк проге не интересно какой год а какой по счету
+    vYears++;
   }
-  vYears=vYears+1
-  counterV++
 }
 
-console.log(amountY+' високосных лет');
-console.log(counterV+' итераций');
+console.log(vYears + " високосных лет");
+console.log(counterV + " итераций");
